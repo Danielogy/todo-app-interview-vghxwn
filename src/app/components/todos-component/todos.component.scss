@@ -1,0 +1,78 @@
+.post-todo {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  margin-top: 30px;
+}
+.post-todo input,
+.post-todo select {
+  margin-bottom: 20px;
+}
+
+.todo-title {
+  font-size: 2rem;
+}
+.todo-body {
+  font-size: 1rem;
+}
+
+.todo {
+  width: 80%;
+  margin: 20px auto;
+  border: solid grey 1px;
+  border-radius: 5px;
+  box-shadow: 3px 3px grey;
+  padding: 5%;
+}
+
+.todo-desc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-buttons {
+  display: flex;
+  flex-direction: column;
+}
+.todo-buttons button,
+#btnPostTodo {
+  width: 80px;
+  height: 50px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+.todo-buttons button:hover {
+  background-color: #c6c6c6;
+}
+
+#btnDelete {
+  margin-bottom: 20px;
+}
+#btnDelete:hover {
+  background-color: salmon;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.edit-todo {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  display: none;
+}
+
+#btnUpdateTodo {
+  margin-top: 20px;
+  height: 40px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+
+.active {
+  display: flex;
+}

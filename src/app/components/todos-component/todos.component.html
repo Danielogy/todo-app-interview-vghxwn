@@ -1,0 +1,68 @@
+<p>Todos Component is working!</p>
+<button mat-raised-button color="primary" routerLink="/directions">
+  View Directions
+</button>
+
+<div class="todo-wrapper">
+  <div class="post-todo">
+    <label for="txtTitle">Todo Title</label>
+    <input type="text" name="txtTitle" id="txtTitle" #txtTitle />
+    <label for="selImportant">Completed</label>
+    <select id="selImportant" #important>
+      <option value="no">Not Completed</option>
+      <option value="yes">Completed</option>
+    </select>
+    <button
+      id="btnPostTodo"
+      (click)="postTodo(201, txtTitle.value, important.value)"
+    >
+      post
+    </button>
+  </div>
+  <!-- <input type="text" name="txtInput" id="txtInput" #txtInput />
+  <button id="btnGetTodo" (click)="getTodoId(txtInput.value)">Get</button> -->
+  <div class="todo" *ngFor="let todo of arrTodo">
+    <div class="todo-desc">
+      <div>
+        <div class="todo-info">
+          <div class="todo-body">{{ todo.id }}</div>
+          <h1 class="todo-title {{ todo.completed ? 'completed' : '' }}">
+            {{ todo.title }}
+          </h1>
+        </div>
+      </div>
+      <div class="todo-buttons">
+        <button id="btnDelete" (click)="deleteTodo(todo.id)">DELETE</button>
+        <button id="btnEdit" (click)="openTodoEdit(todo.id)">EDIT</button>
+      </div>
+    </div>
+
+    <div class="edit-todo {{ opened ? 'active' : '' }}">
+      <label for="txtnewTitle">New Title</label>
+      <input type="text" name="txtnewTitle" id="txtnewTitle" #txtnewTitle />
+      <label for="selnewCompleted">Completed</label>
+      <select id="selnewCompleted" #newimportant>
+        <option value="no">Not Important</option>
+        <option value="yes">Important</option>
+      </select>
+      <button
+        id="btnUpdateTodo"
+        (click)="patchTodo(todo.id, txtnewTitle.value, newimportant.value)"
+      >
+        UPDATE
+      </button>
+    </div>
+  </div>
+
+  <input type="text" name="txtTitle" id="txtTitle" #txtTitle />
+  <select #important>
+    <option value="no">Not Important</option>
+    <option value="yes">Important</option>
+  </select>
+  <button
+    id="btnPostTodo"
+    (click)="postTodo(201, txtTitle.value, important.value)"
+  >
+    post
+  </button>
+</div>
